@@ -103,6 +103,7 @@
 #define AUDIO_FREQUENCY_32K           ((uint32_t)32000)
 #define AUDIO_FREQUENCY_22K           ((uint32_t)22050)
 #define AUDIO_FREQUENCY_16K           ((uint32_t)16000)
+#define AUDIO_FREQUENCY_12K           ((uint32_t)12000)
 #define AUDIO_FREQUENCY_11K           ((uint32_t)11025)
 #define AUDIO_FREQUENCY_8K            ((uint32_t)8000)  
 
