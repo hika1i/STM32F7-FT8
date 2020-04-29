@@ -13,7 +13,7 @@
 #endif
 
 #define MEM_BLOCK_SIZE 32   //mem block size 32B
-#define MAX_MEM_SIZE 2 * 1024 * 1024    //max pool size 7MB(the extern SDRAM size of STM32F769, but exclude the LCD frame buffer)
+#define MAX_MEM_SIZE 4 * 1024 * 1024    //max pool size 7MB(the extern SDRAM size of STM32F769, but exclude the LCD frame buffer)
 #define MEM_ALLOC_TABLE_SIZE MAX_MEM_SIZE / MEM_BLOCK_SIZE    //mem table size
 
 #include <stdint.h>

@@ -16,10 +16,10 @@
 #endif
 
 //LDPC sizes
-#define N 174
-#define K 91
-#define M 83 //M = N - K
-#define K_BYTES 12 // (K + 7)/8
+#define LDPC_N 174
+#define LDPC_K 91
+#define LDPC_M 83 //LDPC_M = LDPC_N - LDPC_K
+#define K_BYTES 12 // (LDPC_K + 7)/8
 //
 //FT8 symbol counts
 #define ND 58
@@ -28,9 +28,9 @@
 #define CRC_POLYNOMIAL 0x2757
 #define CRC_WIDTH 14
 
-//const uint8_t N = 174;
-//const uint8_t K = 91;
-//const uint8_t M = 83;
+//const uint8_t LDPC_N = 174;
+//const uint8_t LDPC_K = 91;
+//const uint8_t LDPC_M = 83;
 //const uint8_t K_BYTES = 12;
 //const uint8_t ND = 58;
 //const uint8_t NS = 22;
@@ -49,15 +49,16 @@ extern const uint8_t graymap[8];
 extern const uint8_t icos7[7];
 
 //LDPC 174 parity arrays
-extern const uint8_t Mn[N][3];
+extern const uint8_t Mn[LDPC_N][3];
 
-extern const uint8_t Nm[M][7];
+extern const uint8_t Nm[LDPC_M][7];
 
-extern const uint8_t nrw[M];
+extern const uint8_t nrw[LDPC_M];
 
 // Parity generator matrix for (174,91) LDPC code, stored in bitpacked format (MSB first)
-extern const uint8_t kGenerator[M][K_BYTES];
+extern const uint8_t kGenerator[LDPC_M][K_BYTES];
 extern const int16_t raw_data[];
+extern const float ffttest[];
 
 #ifdef __cplusplus
 }

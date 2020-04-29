@@ -28,8 +28,8 @@ void encode174(const uint8_t *message, uint8_t *codeword)
     // Instead we access the generator bits straight from the binary representation in kGenerator
 
     // For reference:
-    // codeword(1:K)=message
-    // codeword(K+1:N)=pchecks
+    // codeword(1:LDPC_K)=message
+    // codeword(LDPC_K+1:LDPC_N)=pchecks
 
     // printf("Encode ");
     // for (int i = 0; i < K_BYTES; ++i) {
@@ -38,17 +38,17 @@ void encode174(const uint8_t *message, uint8_t *codeword)
     // printf("\n");
 
     // Fill the codeword with message and zeros, as we will only update binary ones later
-    for (int j = 0; j < (7 + N) / 8; ++j)
+    for (int j = 0; j < (7 + LDPC_N) / 8; ++j)
     {
         codeword[j] = (j < K_BYTES) ? message[j] : 0;
     }
 
-    uint8_t col_mask = (0x80 >> (K % 8));   // bitmask of current byte
+    uint8_t col_mask = (0x80 >> (LDPC_K % 8));   // bitmask of current byte
     uint8_t col_idx = K_BYTES - 1;          // index into byte array
 
-    // Compute the first part of itmp (1:M) and store the result in codeword
-    for (int i = 0; i < M; ++i)
-    { // do i=1,M
+    // Compute the first part of itmp (1:LDPC_M) and store the result in codeword
+    for (int i = 0; i < LDPC_M; ++i)
+    { // do i=1,LDPC_M
         // Fast implementation of bitwise multiplication and parity checking
         // Normally nsum would contain the result of dot product between message and kGenerator[i],
         // but we only compute the sum modulo 2.
@@ -73,7 +73,7 @@ void encode174(const uint8_t *message, uint8_t *codeword)
     }
 
     // printf("Result ");
-    // for (int i = 0; i < (N + 7) / 8; ++i) {
+    // for (int i = 0; i < (LDPC_N + 7) / 8; ++i) {
     //     printf("%02x ", codeword[i]);
     // }
     // printf("\n");
