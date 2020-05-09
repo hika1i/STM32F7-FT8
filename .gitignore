@@ -6,3 +6,4 @@ mbed-os
 BUILD
 
 FFT_final
+BSP_DISCO_F769NI

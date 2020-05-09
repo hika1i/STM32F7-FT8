@@ -140,9 +140,9 @@ uint16_t packgrid(const char *grid4)
     }
 
     // Take care of special cases
-    if (equals(grid4, "RRR")) return MAXGRID4 + 2;
-    if (equals(grid4, "RR73")) return MAXGRID4 + 3;
-    if (equals(grid4, "73")) return MAXGRID4 + 4;
+    if (!strcmp(grid4, "RRR")) return MAXGRID4 + 2;
+    if (!strcmp(grid4, "RR73")) return MAXGRID4 + 3;
+    if (!strcmp(grid4, "73")) return MAXGRID4 + 4;
 
     // Check for standard 4 letter grid
     if (in_range(grid4[0], 'A', 'R') &&

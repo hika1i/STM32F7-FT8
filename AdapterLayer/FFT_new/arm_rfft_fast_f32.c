@@ -587,7 +587,7 @@ void arm_rfft_fast_f32(
       merge_rfft_f32(S, p, pOut);
       /* Complex radix-4 IFFT process */
       arm_cfft_f32( Sint, pOut, ifftFlag, 1);
-   }
+   } 
    else
    {
       /* Calculation of RFFT of input */

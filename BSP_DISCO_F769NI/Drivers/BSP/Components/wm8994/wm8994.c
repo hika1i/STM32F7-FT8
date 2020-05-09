@@ -423,17 +423,16 @@ uint32_t wm8994_Init(uint16_t DeviceAddr, uint16_t OutputInputDevice, uint8_t Vo
     /* AIF1 Sample Rate = 96 (KHz), ratio=256 */ 
     counter += CODEC_IO_Write(DeviceAddr, 0x210, 0x00A3);
     break;
-
-  case  AUDIO_FREQUENCY_12K:
-    /* AIF1 Sample Rate = 12 (KHz), ratio=256 */ 
-    counter += CODEC_IO_Write(DeviceAddr, 0x210, 0x0023);
-    break;
-
+    
   case  AUDIO_FREQUENCY_11K:
     /* AIF1 Sample Rate = 11.025 (KHz), ratio=256 */ 
     counter += CODEC_IO_Write(DeviceAddr, 0x210, 0x0013);
     break;
-    
+  
+  case  AUDIO_FREQUENCY_12K:
+    /* AIF1 Sample Rate = 12 (KHz), ratio=256 */ 
+    counter += CODEC_IO_Write(DeviceAddr, 0x210, 0x0023);
+    break;
   case  AUDIO_FREQUENCY_22K:
     /* AIF1 Sample Rate = 22.050 (KHz), ratio=256 */ 
     counter += CODEC_IO_Write(DeviceAddr, 0x210, 0x0043);
@@ -1005,11 +1004,6 @@ uint32_t wm8994_SetFrequency(uint16_t DeviceAddr, uint32_t AudioFreq)
     counter += CODEC_IO_Write(DeviceAddr, 0x210, 0x0013);
     break;
     
-  case  AUDIO_FREQUENCY_12K:
-    /* AIF1 Sample Rate = 12 (KHz), ratio=256 */ 
-    counter += CODEC_IO_Write(DeviceAddr, 0x210, 0x0023);
-    break;
-
   case  AUDIO_FREQUENCY_22K:
     /* AIF1 Sample Rate = 22.050 (KHz), ratio=256 */ 
     counter += CODEC_IO_Write(DeviceAddr, 0x210, 0x0043);

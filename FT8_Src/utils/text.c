@@ -37,11 +37,6 @@ uint8_t starts_with(const char *string, const char *prefix)
     return 0 == memcmp(string, prefix, strlen(prefix));
 }
 
-uint8_t equals(const char *string1, const char *string2)
-{
-    return 0 == strcmp(string1, string2);
-}
-
 int char_index(const char *string, char c)
 {
     for (int i = 0; *string; ++i, ++string)

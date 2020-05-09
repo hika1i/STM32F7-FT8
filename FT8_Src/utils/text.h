@@ -22,8 +22,6 @@ uint8_t in_range(char c, char min, char max);
 
 uint8_t starts_with(const char *string, const char *prefix);
 
-uint8_t equals(const char *string1, const char *string2);
-
 int char_index(const char *string, char c);
 
 // Text message formatting:

@@ -1,7 +1,7 @@
 # example repository config (see 'hg help config' for more info)
 [paths]
 mbed-studio-cache = c:\Users\yaoli\AppData\Local\Mbed Studio\library-cache\os.mbed.com\teams\ST\code\BSP_DISCO_F769NI
-default = https://os.mbed.com/teams/ST/code/BSP_DISCO_F769NI/
+default = http://os.mbed.com/teams/ST/code/BSP_DISCO_F769NI/
 
 # path aliases to other clones of this repo in URLs or filesystem paths
 # (see 'hg help config.paths' for more info)

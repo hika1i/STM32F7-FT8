@@ -89,7 +89,8 @@ uint16_t crc(uint8_t *message, int num_bits)
     const uint16_t TOPBIT = (1 << (CRC_WIDTH - 1));
 
     // printf("CRC, %d bits: ", num_bits);
-    // for (int i = 0; i < (num_bits + 7) / 8; ++i) {
+    // for (int i = 0; i < (num_bits + 7) / 8; ++i) 
+    // {
     //     printf("%02x ", message[i]);
     // }
     // printf("\n");

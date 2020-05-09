@@ -28,14 +28,6 @@
 #define CRC_POLYNOMIAL 0x2757
 #define CRC_WIDTH 14
 
-//const uint8_t LDPC_N = 174;
-//const uint8_t LDPC_K = 91;
-//const uint8_t LDPC_M = 83;
-//const uint8_t K_BYTES = 12;
-//const uint8_t ND = 58;
-//const uint8_t NS = 22;
-//const uint8_t NN = 79;
-
 // Define CRC parameters
 //const uint16_t CRC_POLYNOMIAL = 0x2757;  // CRC-14 polynomial without the leading (MSB) 1
 //const int CRC_WIDTH = 14;
@@ -57,8 +49,12 @@ extern const uint8_t nrw[LDPC_M];
 
 // Parity generator matrix for (174,91) LDPC code, stored in bitpacked format (MSB first)
 extern const uint8_t kGenerator[LDPC_M][K_BYTES];
-extern const int16_t raw_data[];
-extern const float ffttest[];
+
+extern const float blackman_window[2048];
+
+extern const float hamming_window[2048];
+
+extern const float hann_window[2048];
 
 #ifdef __cplusplus
 }
